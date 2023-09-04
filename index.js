@@ -1,4 +1,5 @@
 import prompt from "prompt-sync";
+// import {convertir}   from "./TP1/tp1.js";
 // import { add, sub, getRandom1, getRandom2 } from "./TP1/tp1.js";
 //
 // //l'appel de fonction getRandom. Math.floor donne les nombres entiers
@@ -20,7 +21,7 @@ import prompt from "prompt-sync";
 // // ensuite supprimer les // des lignes 23 et 24 
 
 // // let r2 = Math.floor(getRandom2(min, max));
-// // console.log("Aleatoire : 
+// // console.log("Aleatoire : );
 
 // //------------------------ Boucle--------------------------------------------- 
 
@@ -219,50 +220,70 @@ import prompt from "prompt-sync";
 // }
 // console.log('Bravo vous avez deviner !')
 
+//----------------------exercice convertion temperature en celsius -----------
+
+//appel de la fonction convertire
+  
+// let conv = convertire( (prompt()('Donner la temperature en celsius : ')));
+// console.log(conv);
+
+
+
 // --------------------------Les objet ---------------------------------
 
 //  OBJET
 
+// // --------------------entite cours --------------------------
 
-// ----------------entité etudaint------------------------
+//tableau de cours
 
-// let etudiant = {
-//     nom : "",
-//     prenom : "",
-//     age : "",
-// }
+  let  cours = [];
+    
+for (let i = 1; i < 5; i++) {
+    let matiere = prompt()("Donner le nom du cours"+" "+ i +":"+" ")
+    cours.push(matiere);
+      
+}
 
-// etudiant.nom = prompt()("donner le nom de l'etudiant : ")
-// etudiant.prenom = prompt()("donner le prenom de l'etudiant : ")
-// etudiant.age = prompt()("donner l'age de l'etudiant : ")
+console.log("Les cours disponibles sont : " , cours);
+
+
+// ----------------entité etudiant------------------------
+
+  let etudiant = {
+      nom : "",
+      prenom : "",
+      age : "",
+      cour : [],
+  }
+
+  etudiant.nom = prompt()("Donner le nom de l'etudiant : ");
+  etudiant.prenom = prompt()("Donner le prenom de l'etudiant : ");
+  etudiant.age = prompt()("Donner l'age de l'etudiant : ");
+
+  //passer a l'entité etudiant un cour parmis les cours du tableau
+
+  let choix1 = prompt()("Donner votre choix 1 de cour [0 à 3] a suivre : ")
+  let choix2 = prompt()("Donner votre choix 2 de cour [0 à 3] a suivre : ")
+  etudiant.cour.push(cours[choix1]) ;
+  etudiant.cour.push(cours[choix2]) ;
+
+console.log(etudiant);
 
 // // -----------------entité professeur-----------------
 
-// let Proffeseur = {
-//     domaine : "",
-//     nom : "",
-//     prenom :"",
+//  let Profeseur = {
+//      domaine : "",
+//      nom : "",
+//      prenom :"",
 
 
-// }
+//  }
 
-// etudiant.nom = prompt()("donner le nom du professeur : ")
-// etudiant.prenom = prompt()("donner le prenom du professeur : ")
-// etudiant.age = prompt()("donner le cours enseigner  : ")
+//  professeur.nom = prompt()("donner le nom du professeur : ");
+//  professeur.prenom = prompt()("donner le prenom du professeur : ");
+//  professeur.age = prompt()("donner le cours enseigner  : ")
 
-// --------------------entite cour --------------------------
+//console.log(etudiant);
+//console.log(Professeur);
 
-let cour = {
-    matiere : "",
-
-}
-
-cour.matiere = prompt()("donner le nom du cours a suivre : ");
-
-// console.log(etudiant);
-// console.log(Proffeseur);
-console.log(cour);
-
-//verifie la reception du propieté matiere 
-let test = "modou";
-console.log(test +" "+ "etudie" +" "+ cour.matiere);

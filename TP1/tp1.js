@@ -24,18 +24,17 @@ import  prompt  from "prompt-sync";
 
 
 
-//fonction pour convertire en celsius
+//fonction pour convertir en celsius
 
 
 
-  function convertire(celsius) {
+  function convertir(celsius) {
 
-
-    
     let fahrenheit =(celsius * 1.8) + 32 ;
-    console.log("la temperature en fahrenheit  est eagle à : ",fahrenheit,"f");  
+    return fahrenheit;
   }
-  convertire( (prompt()('Donner la temperature en celsius : ')))
+
+  export {convertir} ;
   
 
 
