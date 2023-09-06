@@ -237,53 +237,87 @@ import prompt from "prompt-sync";
 
 //tableau de cours
 
-  let  cours = [];
-    
-for (let i = 1; i < 5; i++) {
-    let matiere = prompt()("Donner le nom du cours"+" "+ i +":"+" ")
-    cours.push(matiere);
-      
-}
+  let cours = {
+       
+       cour : [],
 
-console.log("Les cours disponibles sont : " , cours);
+  }
+    
+ for (let i = 1; i < 5; i++) {
+     let matiere = prompt()("Donner le nom du cours"+" "+ i +":"+" ")
+    cours.cour.push(matiere);
+  
+      
+ }
 
 
 // ----------------entité etudiant------------------------
 
   let etudiant = {
       nom : "",
-      prenom : "",
-      age : "",
-      cour : [],
-  }
+       prenom : "",
+       age : "",
+       cour : [],
+   }
 
-  etudiant.nom = prompt()("Donner le nom de l'etudiant : ");
-  etudiant.prenom = prompt()("Donner le prenom de l'etudiant : ");
-  etudiant.age = prompt()("Donner l'age de l'etudiant : ");
+   etudiant.nom = prompt()("Donner le nom de l'etudiant : ");
+   etudiant.prenom = prompt()("Donner le prenom de l'etudiant : ");
+   etudiant.age = prompt()("Donner l'age de l'etudiant : ");
 
-  //passer a l'entité etudiant un cour parmis les cours du tableau
+   //passer a l'entité etudiant un cour parmis les cours du tableau
 
-  let choix1 = prompt()("Donner votre choix 1 de cour [0 à 3] a suivre : ")
-  let choix2 = prompt()("Donner votre choix 2 de cour [0 à 3] a suivre : ")
-  etudiant.cour.push(cours[choix1]) ;
-  etudiant.cour.push(cours[choix2]) ;
+   console.log("Les cours disponibles sont : " , cours.cour);
 
-console.log(etudiant);
+   let choix = prompt()("Choisi un cours parmi les 4 disponible  [0 à 3] : ")
+   etudiant.cour.push(cours.cour[choix]) ;
+
+
+
 
 // // -----------------entité professeur-----------------
 
-//  let Profeseur = {
-//      domaine : "",
-//      nom : "",
-//      prenom :"",
+   let professeur = {
+      prof1 : {
+        nom : "",
+        module : cours.cour[0]
+      },
+      prof2 : {
+        nom : "",
+        module : cours.cour[1]
+      },
+      prof3 : {
+        nom : "",
+        module : cours.cour[2]
+      },
+      prof4 : {
+        nom : "",
+        module : cours.cour[3]
+      }
+
+   }
+
+ professeur.prof1.nom = prompt()("Donner le nom du professeur 1 : ")
+ professeur.prof2.nom = prompt()("Donner le nom du professeur 2 : ")
+ professeur.prof3.nom = prompt()("Donner le nom du professeur 3 : ")
+ professeur.prof4.nom = prompt()("Donner le nom du professeur 4 : ")
 
 
-//  }
+ //affichage des 3 entité
+ console.log("---------------------les Resultats :-----------------------------");
 
-//  professeur.nom = prompt()("donner le nom du professeur : ");
-//  professeur.prenom = prompt()("donner le prenom du professeur : ");
-//  professeur.age = prompt()("donner le cours enseigner  : ")
+ console.log("---------------------les cours-----------------------------");
 
-//console.log(etudiant);
-//console.log(Professeur);
+ console.log("Les cours disponibles sont : " , cours.cour);
+
+ console.log("----------------------les professeurs------------------------");
+
+ console.log(professeur)
+
+ console.log("---------------------les etudiants--------------------------");
+
+ console.log(etudiant);
+
+
+
+
 
